@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  background: #f5f5f5;
+}
+
+
+/*define grid*/
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+header{
+  padding: 20px 40px;
+  background: #fff;
+
+}
+
+header h1{
+  grid-column:span 6; /*ensures Michael Davids h1 spans 6 columns*/
+}
+
+header nav {
+  grid-column: 7 / span 6; /*starts at 7th column and spans 6 columns after*/
+  justify-self: end; /*pushes all nav items to the end of the last column)*/
+  align-items: center;
+
+}
+
+header nav a{
+  color: #333;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+main{
+  max-width:1200px;
+  margin:60px auto;
+  padding: 20px;
+
+}
+
+main img{
+  grid-column:span 6; /*ensures images in main spans 6 columns in width*/
+  width:100%;
+  border-radius: 6px;
+  transition: transform .1s; /* transform property to enlarg the look of the element on action */
+
+}
+
+main img:hover{
+  transform: scale(1.2);
+}
+
+main .welcome{
+  grid-column: 8 /span 5;/*welcome text area leaves one column and spans 5 columns after image, i*/
+
+
+
+}
+
+
+
+
+
+main .about-area{
+  grid-column: span 12;
+  text-align:center;
+  color:#fff;
+  background:#333
+  
+
+}
+
+main .about-area > p{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  padding-top:20px;
+
+}
+
+
+
+main .portfolio-card{
+  grid-column: span 4; /*split portfloio area into 3 cards, each spanning 4 columns*/
+  background:#fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 3px rgba(0,0,0);
+
+
+}
+
+
+
+/*Responsiveness styling below */
+
+@media screen and (max-width: 960px) {
+
+  main img{
+    grid-column: 2 / span 10;
+    
+  }
+
+  main .welcome{
+    grid-column:3 / span 8;
+    text-align: center;
+  }
+
+  main .about-area{
+    grid-column:3 / span 8;
+    text-align: center;
+  }
+
+  main .portfolio-card{
+    grid-column: 3 / span 8;
+  }
+
+  header .grid{
+    grid-column: 2 / span 10;
+  }
+
+
+}
